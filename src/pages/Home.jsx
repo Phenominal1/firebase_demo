@@ -8,7 +8,7 @@ const Home = () => {
         <Navbar/>
             <div className='pt-8'>
             
-                <h1 className='text-center text-5xl font-bold'>This is home page</h1>   
+                <h1 className='text-center text-5xl font-bold'>Welcome!</h1>   
             </div>
 
             
