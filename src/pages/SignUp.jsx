@@ -12,13 +12,14 @@ const SignUp = () => {
     const [password, setPassword] = useState('');
 
 
-    // const putData = () =>{
-    //     set(ref(db, "users/ritesh"),{
-    //         id:1,
-    //         name: 'Ritesh Dubey',
-    //         age:21,
-    //     });
-    // };
+    const data = ()=>{
+        firebase.putDataFirestore();
+    }
+
+    const data2 = ()=>{
+        firebase.putDataFirestore2();
+    }
+
 
 
     const RegisterUser =()=>{
@@ -102,8 +103,28 @@ const SignUp = () => {
         <div className=' flex-grow-0 flex justify-center items-center'>
             <div className='flex  gap-8 pt-8 pb-8'>
                 <button className='py-2 px-10 bg-green-200 text-lg font-semibold rounded-2xl shadow-xl hover:scale-105 transition-all duration-300'>SignUp with Phone</button>
-                <button onClick={()=>firebase.SignUpWithGoogle()
-}  className='py-2 px-10 bg-green-200 text-lg font-semibold rounded-2xl shadow-xl hover:scale-105 transition-all duration-300' >SignUp with Google</button>
+                <button onClick={()=>firebase.SignUpWithGoogle()} 
+                    className='py-2 px-10 bg-green-200 text-lg font-semibold rounded-2xl shadow-xl hover:scale-105 transition-all duration-300' >
+                    SignUp with Google
+                </button>
+
+                <button 
+                    onClick={data}  
+                    className='py-2 px-10 bg-green-200 text-lg font-semibold rounded-2xl shadow-xl hover:scale-105 transition-all duration-300' >
+                    Put Data
+                </button>
+
+                <button 
+                    onClick={data2}  
+                    className='py-2 px-10 bg-green-200 text-lg font-semibold rounded-2xl shadow-xl hover:scale-105 transition-all duration-300' >
+                    Put Data2
+                </button>
+
+                <button 
+                    onClick={()=>firebase.readDataWithQuerry()}  
+                    className='py-2 px-10 bg-green-200 text-lg font-semibold rounded-2xl shadow-xl hover:scale-105 transition-all duration-300' >
+                    Read Data
+                </button>
             </div>
         </div>
     </div>
